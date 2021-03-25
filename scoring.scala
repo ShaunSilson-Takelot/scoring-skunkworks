@@ -23,7 +23,9 @@ case class AllocatedOrder(
   scoredOrder: ScoredOrder
 )
 
-val scoredOrdersDemo =
+/* ############################################################################ */
+
+val scoredOrdersSimple =
   List(
     ScoredOrder(
       ScoreableOrder("A"),
@@ -75,7 +77,7 @@ A                       B                        C                              
    1 2                                        3
 */
 
-val scoredOrdersNotEnoughrivers =
+val scoredOrdersNotEnoughDriversLinear =
   List(
     ScoredOrder(
       ScoreableOrder("A"),
@@ -111,8 +113,9 @@ val scoredOrdersNotEnoughrivers =
     )
   )
 
+/* ############################################################################ */
 
-val scoredOrdersNonGreedy =
+val scoredOrdersOddPosition =
   List(
     ScoredOrder(
       ScoreableOrder("A"),
@@ -166,7 +169,9 @@ val scoredOrdersNonGreedy =
     )
   )
 
-val scoredOrdersNonGreedyNotEnough =
+/* ############################################################################ */
+
+val scoredOrdersNotEnoughDrivers =
   List(
     ScoredOrder(
       ScoreableOrder("A"),
@@ -239,6 +244,8 @@ val scoredOrdersNonGreedyNotEnough =
       )
     )
   )
+
+/* ############################################################################ */
 
 val scoredOrdersExtraDrivers =
   List(
@@ -342,6 +349,8 @@ val scoredOrdersExtraDrivers =
     )
   )
 
+/* ############################################################################ */
+
 def allocateToHighest(
   scoredOrders: List[ScoredOrder],
   excludedDrivers: List[Long]
@@ -416,13 +425,15 @@ def doScoring(
   }
 }
 
- /*
-  Available sets: 
-    scoredOrdersDemo
-    scoredOrdersExtraDrivers
-    scoredOrdersNotEnoughrivers
-*/
-val results = doScoring(scoredOrdersDemo, List())
+val datasets = List(
+  scoredOrdersSimple,
+  scoredOrdersOddPosition,
+  scoredOrdersNotEnoughDriversLinear,
+  scoredOrdersNotEnoughDrivers,
+  scoredOrdersExtraDrivers
+)
+
+val results = doScoring(scoredOrdersSimple, List())
 
 val out =
   results.map{ r =>
