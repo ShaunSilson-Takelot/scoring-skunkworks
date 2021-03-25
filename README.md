@@ -1,7 +1,25 @@
+# How to run
+Create a new scratch file and copy this file contents into it
+(I'm not sure how to import scratch files into the workspace)
+
+![image](https://user-images.githubusercontent.com/45592851/112501530-ff6c6400-8d91-11eb-832c-1c370264d267.png)
+
 Orders are squares with letters
 Drivers are circles with numbers
+Go to the bottom of the file and call doScoring with one of the available datasets (listed below).
+The output will list a set of orders and which driver they are assigned to.
+Compare this to the diagrams to verify that they make sense.
 
-## Easy Path Demo
+Example output for Simple Demo :
+```
+A -> 2 Order A goes to driver 2 (distance of 70)
+B -> 6 Order B goes to driver 6 (distance of 90)
+C -> 4 Order C goes to driver 4 (distance of 70)
+```
+
+# Datasets
+
+## Simple Demo
 scoredOrdersSimple
 3 orders
 6 drivers
