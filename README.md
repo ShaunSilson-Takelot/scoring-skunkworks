@@ -9,6 +9,7 @@ Drivers are circles with numbers
 Go to the bottom of the file and call doScoring with one of the available datasets (listed below).
 The output will list a set of orders and which driver they are assigned to.
 Compare this to the diagrams to verify that they make sense.
+-1 means an order has not been allocated
 
 Example output for Simple Demo :
 ```
